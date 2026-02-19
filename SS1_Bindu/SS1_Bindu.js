@@ -25,6 +25,7 @@ rect(435,670,10,70);
 
  // A wall with many choices.//
   fill( 255,255,255)
+  
   circle(100, 100, 100);
     circle(200, 250, 200);
       circle(500, 300, 300);
