@@ -46,6 +46,26 @@ noStroke();
 rect(400,833,20,10);
 rect(430,833,20,10);
 
+//circles on the wall//
+fill(255);
+stroke('black');
+strokeWeight(2);
+circle( width/1.6, height/3,5);
+circle( width/1.6, height/3,500);
+circle( width/1.6, height/3,450);
+circle( width/1.6, height/3,400);
+circle( width/1.6, height/3,350);
+circle( width/1.6, height/3,300);
+circle( width/1.6, height/3,250);
+circle( width/1.6, height/3,200);
+circle( width/1.6, height/3,150);
+circle( width/1.6, height/3,100);
+circle( width/1.6, height/3,50);
+
+
+
+
+
 
 
 
