@@ -1,11 +1,10 @@
 
-  createCanvas(400, 400);
 //Bindu//
 
 
 
 // " Perplexed"//
-// the picture is all about the state of them perplexed situation because of the too many chooices.//
+// the picture is all about the state of them perplexed situation because of too many choices.//
 
 
 
