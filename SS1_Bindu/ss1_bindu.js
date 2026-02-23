@@ -1,5 +1,5 @@
 
-  createCanvas(400, 400);
+ 
 //Bindu//
 
 
