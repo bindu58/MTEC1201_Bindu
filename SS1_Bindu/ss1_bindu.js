@@ -1,11 +1,14 @@
 
+<<<<<<< HEAD
  
+=======
+>>>>>>> 373cb897e8d34afabc54211515e2394dbc884ebc
 //Bindu//
 
 
 
 // " Perplexed"//
-// the picture is all about the state of them perplexed situation because of the too many chooices.//
+// the picture is all about the state of them perplexed situation because of too many choices.//
 
 
 
