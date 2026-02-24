@@ -5,10 +5,10 @@
 // " Perplexed"//
 // the picture is all about the state of them perplexed situation because of the too many chooices.//
 
-let x= random(200,1000)
-let y= random(0,700)
-let r= 100;
 
+let x = 300;
+let y = 90;
+let r = 50;
 
 function setup() {
   createCanvas(1000,880);
@@ -53,29 +53,27 @@ for( let i=0; i<11; i++){
   fill(255*(i/10),mouseY,);
   circle(width/1.6, height/3, 550-(i*50),)
 
-  function mousePressed(){
-    fill(255,10,10);
-    circle,(x,y,r);
-    circle(x,y+100,r)
 
-    
-  }
+fill(255,0,0);
+  circle(x, y, r);
+  circle(950, y, r);
+  fill(0,0,0);
+  circle(x, 590, r);
+  circle(950, 590, r);
 
-  function keyPressed(){
-    fill(255,10,10);
-    circle,(x,y,r);
-    circle(x,y+100,r)
-      
+  y = y + 1;
+  if (y > 600) { 
+    y= 0;
+   
     }
- 
-
-  
-
-
-  
-
   }
+ function mousePressed() {
+  fill(255,0,0);
+  circle(x, y, r);
+  circle(950, y, r);
+  fill(0,0,0);
+  circle(x, 590, r);
+  circle(950, 590, r);
 
 }
-
-
+}
