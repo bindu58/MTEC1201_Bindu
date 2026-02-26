@@ -70,6 +70,6 @@ fill(255,0,0);
 
   //stop the circles when they reach the bottom of the wall//
  function mousePressed() {
-  y = 90;  
+  y = y;  
 }
 }
