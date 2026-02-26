@@ -67,13 +67,9 @@ fill(255,0,0);
    
     }
   }
+  //stop the circles when they reach the bottom of the wall//
  function mousePressed() {
-  fill(255,0,0);
-  circle(x, y, r);
-  circle(950, y, r);
-  fill(0,0,0);
-  circle(x, 590, r);
-  circle(950, 590, r);
-
+  noLoop();
+  
 }
 }
