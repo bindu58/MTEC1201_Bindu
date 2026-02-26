@@ -67,9 +67,9 @@ fill(255,0,0);
    
     }
   }
+
   //stop the circles when they reach the bottom of the wall//
  function mousePressed() {
-  noLoop();
-  
+  y = 90;  
 }
 }
