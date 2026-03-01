@@ -73,7 +73,6 @@ fill(255,0,0);
  function mousePressed() {
   noLoop();
 }
-//start looping again when mouse is pressed again
-function mousePressed() {
+function mouseReleased() {
   loop();
 }
