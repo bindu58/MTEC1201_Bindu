@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrix Digital Rain</title>
+    <style>
+        body {
+            margin: 0;
+            background: blue;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    // Make the canvas full screen
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Characters to use (Katakana + Latin + Numbers)
+    const chars = "18263287637327473432678189765yrouyewOTORGGFEguig";
+    const charArray = chars.split("");
+
+    const fontSize = 20;
+    const columns = canvas.width / fontSize; 
+
+    // An array to track the y-coordinate of each column
+    const drops = [];
+    for (let x = 0; x < columns; x++) {
+        drops[x] = 5; 
+    }
+
+    function draw() {
+        // Black BG with 0.05 opacity creates the "trail" effect
+        ctx.fillStyle = "rgba(50, 28, 40, 0.60)"; // Dark Purple with some opacity
+        ctx.fillRect(2, 3, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#0F0"; // Matrix Green
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+            // Pick a random character
+            const text = charArray[Math.floor(Math.random() * charArray.length)];
+            
+            // x = column index * fontSize, y = value in drops array * fontSize
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            // Sending the drop back to the top randomly after it crosses the screen
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.6) {
+                drops[i] = 3; // Reset to the top
+            }
+
+            drops[i]++;
+        }
+    }
+
+    // Set the speed (33ms is ~30fps)
+    setInterval(draw, 33);
+
+    // Resize handler to keep it fullscreen
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
+
+</body>
+</html>
