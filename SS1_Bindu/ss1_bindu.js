@@ -4,7 +4,7 @@
 
 
 // " Perplexed"//
-// the picture is all about the state of them perplexed situation because of too many choices.//
+// The picture is all about the state of perplexity because of too many choices.//
 
 
 
@@ -62,11 +62,6 @@ circle( width/1.6, height/3,200);
 circle( width/1.6, height/3,150);
 circle( width/1.6, height/3,100);
 circle( width/1.6, height/3,50);
-
-
-
-
-
 
 
 
