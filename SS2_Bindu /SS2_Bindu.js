@@ -3,7 +3,7 @@
 
 
 // " Perplexed"//
-// the picture is all about the state of them perplexed situation because of the too many chooices.//
+// The picture is all about the state of perplexity because of too many choices.//
 
 
 let x = 300;
