@@ -67,9 +67,13 @@ fill(255,0,0);
    
     }
   }
-
-  //stop the circles when they reach the bottom of the wall
- function mousePressed() {
-  y = y;  
 }
+ 
+//stop the circles when they reach the bottom of the wall
+ function mousePressed() {
+  noLoop();
+}
+//start looping again when mouse is pressed again
+function mousePressed() {
+  loop();
 }
