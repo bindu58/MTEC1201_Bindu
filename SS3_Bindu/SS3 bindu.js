@@ -3,11 +3,17 @@
 
 
 // " Perplexed"//
-// the picture is about the state of perplexity  because of the too many choices.//
+// the picture depicts the state of perplexity  because of the too many choices.//
+// Move arrow to x > 600 to stop the movement of side circles.//
+// press the mouse to change the color of the wall and the position of the circles.//
+
 
 let r = 350;
 let str = "FOOL";
 
+// Variables for the wall
+let g = 255;
+let b = 255;
 
 //ELLIPSE VAEIABLES
 let x = 350;
@@ -21,11 +27,19 @@ function setup()
   createCanvas(1000,880);
 }
 
+
+function mousePressed(){
+      g = random(0,255);
+      b = random(0,255);
+      x = random(400,900);
+      y = random(100,600);
+      
+      
+}
+
 function draw() {
   background(50, 50,255);
   
-
-  describe('The text "Fool" written in black in the middle of a white rectangle.');
 
   // The line on the left side.//
  stroke(' Black');
@@ -40,8 +54,8 @@ function draw() {
   line( 200,700,200,0);
 
   //The wall//
-  fill( 220);
-  rect( 200,0,800,700)
+  fill( 200,g,b);
+  rect( 200,0,800,700,10,);
 
 // The person standing in front of the wall//
 fill(0,0,0)
@@ -68,7 +82,7 @@ for( let i=0; i<11; i++){
 if (notGrowing){
   r = r + 0.5; 
 }
-else{  r = r -0.3;
+else{  r = r - 0.5;
 }
 
 if(r > 250 || r < 50){
@@ -105,11 +119,16 @@ else{
 if(dia > 250 || dia < 50){
   isgrowing = !isgrowing;
 }
+if (mouseX> 700) {
+  dia = 100;
+} else {
+  Dia = 50;
+}
 
 textSize(50);
-  fill(0,0,0);
+  fill(0,g,b);
   textSize(14);
   text(str, 590, 300);
-    }
+
+}
     
- 
