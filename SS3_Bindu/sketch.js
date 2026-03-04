@@ -66,13 +66,13 @@ for( let i=0; i<11; i++){
   }
   //circle shrinking//
 if (notGrowing){
-  r = r +1; 
+  r = r + 0.5; 
 }
 else{  r = r -0.3;
 }
 
 if(r > 250 || r < 50){
-  notGrowing = !!notGrowing;
+  notGrowing = notGrowing;
 }
 
   
