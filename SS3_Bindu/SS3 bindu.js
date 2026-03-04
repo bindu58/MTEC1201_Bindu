@@ -4,7 +4,7 @@
 
 // " Perplexed"//
 // the picture depicts the state of perplexity  because of the too many choices.//
-// Move arrow to x > 600 to stop the movement of side circles.//
+// Move arrow to x > 700to stop the movement of side circles.//
 // press the mouse to change the color of the wall and the position of the circles.//
 
 
