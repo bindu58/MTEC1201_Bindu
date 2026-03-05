@@ -82,7 +82,7 @@ for( let i=0; i<11; i++){
 if (notGrowing){
   r = r + 0.5; 
 }
-else{  r = r - 0.5;
+else{  r = r - 0.2;
 }
 
 if(r > 250 || r < 50){
@@ -117,7 +117,7 @@ else{
 }
 
 if(dia > 250 || dia < 50){
-  isgrowing = !isgrowing;
+  isgrowing =!isgrowing;
 }
 if (mouseX> 700) {
   dia = 100;
