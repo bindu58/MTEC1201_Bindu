@@ -55,7 +55,7 @@ function draw() {
 
   //The wall//
   fill( 200,g,b);
-  rect( 200,0,800,700,10,);
+  rect( 200,0,800,700,15);
 
 // The person standing in front of the wall//
 fill(0,0,0)
