@@ -1,17 +1,16 @@
 
 
+let mountain;
+let opacity = 0;
+let fade = 1;
 
-
-let ; //declaration  of the p5 image object
-
-function preload(){
-  mountain = loadImage("image/mountain.jpg");
-}
 
 
 function setup() {
   createCanvas(400, 400);
   imageMode(CENTER);
+  textAlign(CENTER,);
+  textSize(size);
 }
 
 function draw() {
@@ -24,3 +23,9 @@ function draw() {
   image (mountain, width/8, height/8, mountain.width/12, mountain.height/12);
   image (mountain, mouseX, mouseY, mountain.width/18, mountain.height/18);
 }
+  fill(opacity);
+  text("mountain", width / 2, height/12 );
+  opacity += fade ;
+  if (opacity >255 || opacity < 0 ){
+    fade = -fade;
+  }
