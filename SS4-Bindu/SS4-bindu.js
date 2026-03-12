@@ -8,10 +8,6 @@
 // press the mouse to change the color of the wall and the position of the circles.//
 // images will change every 2 seconds and the text will also change according to the image.//
 
-//Variables 
-let fall = 0;
-let opacity = 0;
-let fade = 0;
 
 
 // timer//
@@ -219,10 +215,6 @@ tho.resize;
 
 
    }
-
-
-
-
 
 
 function keyPressed ()
