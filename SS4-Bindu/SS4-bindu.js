@@ -217,3 +217,18 @@ tho.resize;
    }
 
   }
+
+  function keypressed()
+  {
+    if (key === 'w')
+      {
+       text('Mistery', 50,435);
+       image(wallman, 25, 200, 150, 200);
+      }
+      else if (key === 'p') {
+         image(Piano, 25, 200, 150, 200);
+         text('Music', 50,435);
+      }
+
+      
+    }
