@@ -8,6 +8,11 @@
 // press the mouse to change the color of the wall and the position of the circles.//
 // images will change every 2 seconds and the text will also change according to the image.//
 
+//Variables 
+let fall = 0;
+let opacity = 0;
+let fade = 0;
+
 
 // timer//
 currentTime = 0;
@@ -15,12 +20,14 @@ timer1= 2000;
 timer2= 4000;
 timer3= 6000; 
 timer4= 8000;
+timer5= 10000;
 
 //create images
 let man;
 let Piano;
 let wallman;
 let trek;
+let tho;
 
 let r = 350;
 let str = "FOOL";
@@ -42,6 +49,8 @@ function preload()
   Piano = loadImage("Image/piano.jpg");
   trek = loadImage("Image/trek.jpg");
   man = loadImage("Image/man.jpg");
+  tho = loadImage("Image/tho.jpg");
+
 }
 
 function setup() 
@@ -62,7 +71,7 @@ function mousePressed()
 
 function draw() 
    {
-  background(255);
+  background(150,150,50);
   
 
   // The line on the left side.//
@@ -174,9 +183,6 @@ textSize(50);
 
   
   currentTime = millis();
-  
-
-
    image(wallman, 25, 200, 150, 200);
   
 
@@ -184,6 +190,7 @@ textSize(50);
    {
     text('Mistery', 50,435);
     image(wallman, 25, 200, 150, 200);
+   
    
    }
 
@@ -198,13 +205,24 @@ textSize(50);
     image(trek, 25, 200, 150, 200);
     text('Happy', 50,435);
    }
-   if (currentTime > timer4)
+   if (currentTime > timer4 && currentTime<timer5)
    {
     image(man, 25, 200, 150, 200);
     text('Depth', 50,435);
    }
 
-}
+   if (currentTime > timer5)
+    {
+image(tho,0,0,197,700);
+tho.resize;
+
+
+
+   }
+
+
+
+
 
 
 function keyPressed ()
@@ -227,5 +245,5 @@ function keyPressed ()
     image(man, 25, 200, 150, 200);
   }
 
+ }
 }
-    
