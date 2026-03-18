@@ -1,10 +1,17 @@
 // Bindu//
 //" Bollon"//
 // Bollon will fly in the sky and will be able to pop when the mouse is pressed. It will also change color when it pops.//
+// bollon is from pixaby https://pixabay.com/photos/hot-air-ballon-balloon-sky-float-5528622/,
+//https://pixabay.com/photos/sky-balloon-air-outdoors-3375042/
+//https://pixabay.com/photos/hot-air-balloon-sky-9788005/
+//https://pixabay.com/photos/hot-air-balloon-lake-balloon-sunset-2411851/
+
 
 //variable for the rect//
 let h=50
 let w=50
+// images//
+
 
 
 // variables for color//
@@ -12,6 +19,7 @@ let r= 255
 let g = 150
 let b = 75
 let (topcolor, bottomcolor);
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight,);
@@ -36,7 +44,7 @@ bottomcolor = color (135,206,235);
  // home//
   home(width, height, w, h);
  //balloon//
-  bollon(width-100, height-300);
+  
 
 }
 //function for the home//
@@ -62,19 +70,7 @@ function home(width, height, w, h)
  }
 
 
- //function for bollon//
-function bollon(x,y)
-{
-  fill(r,g,b);
-  ellipse(x,y,50,70);
-  fill(0);
-  line(x,y+35,x,y+60);
-}
 
-//function for popping the bollon//
-function mousePressed()
 {
-  r = random(255);
-  g = random(255);
-  b = random(255);
+  
 }
