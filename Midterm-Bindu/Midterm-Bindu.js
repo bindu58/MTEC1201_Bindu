@@ -1,7 +1,7 @@
 // Bindu//
 //" Bollon"//
-// Bollon will fly in the sky and will be able to pop when the mouse is pressed. It will also change color when it pops.//
-// bollon is from pixaby https://pixabay.com/photos/hot-air-ballon-balloon-sky-float-5528622/,
+// Bollons will fly in the sky and will be able to pop when the mouse is pressed. It will also change color when it pops.//
+// bollons is from pixaby https://pixabay.com/photos/hot-air-ballon-balloon-sky-float-5528622/,
 //https://pixabay.com/photos/sky-balloon-air-outdoors-3375042/
 //https://pixabay.com/photos/hot-air-balloon-sky-9788005/
 //https://pixabay.com/photos/hot-air-balloon-lake-balloon-sunset-2411851/
