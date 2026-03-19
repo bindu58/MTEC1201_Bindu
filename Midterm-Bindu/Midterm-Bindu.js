@@ -32,6 +32,7 @@ bluebollon;
 
 let fly = true;
 let pop = false;
+
 let state = "preevent";
 
 function preload()
@@ -74,6 +75,25 @@ bottomcolor = color (135,206,235);
   image(bluebollon, width/10, height-690, 700, 700);
   image(bollon2, width/2, height-630, 500, 500);
   image(bollon3, width/30, height-600, 500, 500);
+  image(bollon2,width/5, height-800,200,300)
+  image( bluebollon,width/30, height-900,300,300)
+  image(bollon1,width/40,height-800,200,200)
+  image(bollon1,width/15,height-600,100,100)
+  image(bollon2,width/20,height-600,200,200)
+  image(bollon3,width/40,height-600,200,200)
+
+  image(bollon1, width/10, height-800, 300, 300);
+  image(bluebollon, width/30, height-700, 200, 200);
+  image(bollon2, width/2, height-630, 500, 500);
+  image(bollon3, width/30, height-600, 500, 500);
+  image(bollon2,width/5, height-800,200,300)
+  image( bluebollon,width/30, height-900,300,300)
+  image(bollon1,width/40,height-800,200,200)
+  image(bollon1,width/15,height-600,100,100)
+  image(bollon2,width/20,height-600,200,200)
+  image(bollon3,width/40,height-600,200,200)
+  
+
 
   
 
