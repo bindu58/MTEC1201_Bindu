@@ -172,7 +172,7 @@ bottomcolor = color (135,206,235);
   y2-=0.3;
 
  
-if (y2<25)
+if (y2<10)
  {
   state = "gameover"
  }
