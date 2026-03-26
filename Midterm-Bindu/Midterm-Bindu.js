@@ -202,7 +202,8 @@ bottomcolor = color (135,206,235);
   fill(random(0,255),random(0,255),random(0,255));
   textSize(50);
   text("Happy New Year!",width/2,height/2);
-fill(random(0,255),random(0,255),random(0,255));
+
+  fill(random(0,255),random(0,255),random(0,255));
   circle(random(0,1000),random(0,600),random(10,15));
   circle(random(0,1000),random(0,600),random(10,15));
   circle(random(0,1000),random(0,600),random(10,15));
