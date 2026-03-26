@@ -15,8 +15,8 @@ let y1 = 300;
 let y2 = 250;
 let opacity = 0;
 let fade = 1;
-let pos;
-let vel;
+
+
 
 // Three stages of event//
    //1. preevent default stage
@@ -75,6 +75,26 @@ bottomcolor = color (135,206,235);
 
  function draw()
  {
+  //background//sky gradient//
+  topcolor = color(0,0,255);
+bottomcolor = color (135,206,235);
+
+  {for ( let y = 0; y < 900-200; y++)
+    {
+  n = map(y,0,900-200,0,1);
+  let newcolor= lerpColor(topcolor,bottomcolor,n);
+  stroke(newcolor);
+  line(0,y,1300,y);
+  }
+  }
+   //floor//
+ fill(0,100,0);
+ rect(0,900-200,1300,200);
+  house (width,height,w,h)
+  fill(opacity);
+  
+
+
   if (state === "pregame")
   {
     preGame();
