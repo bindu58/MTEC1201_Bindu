@@ -15,6 +15,8 @@ let y1 = 300;
 let y2 = 250;
 let opacity = 0;
 let fade = 1;
+let pos;
+let vel;
 
 // Three stages of event//
    //1. preevent default stage
@@ -50,8 +52,7 @@ bluebollon = loadImage("Image/bluebollon.png");
 
 function setup() {
   createCanvas(1300,900);
-  
-textAlign(CENTER);
+ textAlign(CENTER);
   
  }
 
@@ -118,6 +119,7 @@ bottomcolor = color (135,206,235);
 textSize(50);
 text(" Click Here TO Start the Event",width/2,height/2);
 opacity = opacity + fade;
+
 if (opacity >= 255 || opacity <= 0)
 {
   fade = fade * -1;
@@ -148,17 +150,16 @@ if (opacity >= 255 || opacity <= 0)
   image(bollon2, x-200, y1-300, 250+w, 250+h);
   image(bollon1, x+100, y1-300, 250+w, 250+h);
   image(bollon2, x+500, y1-300, 250+w, 250+h);
+ 
+  y1-=0.5;
+  y2-=0.5;
 
-if (fly == true)
-{
-  y1-=   0.5;
-  y2-=  0.5;
-}
 if (y2<25)
-{
-  state = "gameover";
+ {
+  state = "gameover"
+ }
 }
-  }
+  
 
 
 function gameOver()
@@ -185,24 +186,36 @@ bottomcolor = color (135,206,235);
   textSize(50);
   text("Happy New Year!",width/2,height/2);
 fill(random(0,255),random(0,255),random(0,255));
-  circle(random(0,1000),random(0,600),random(10,25));
-  circle(random(0,1000),random(0,600),random(10,25));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
-  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(10,15));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(5,10));
+  circle(random(0,1000),random(0,600),random(1,5));
+  circle(random(0,1000),random(0,600),random(1,5));
+  circle(random(0,1000),random(0,600),random(1,5));
+  circle(random(0,1000),random(0,600),random(1,5));
+  circle(random(0,1000),random(0,600),random(1,5));
+  circle(random(0,1000),random(0,600),random(1,5));
 
-
-  
 
 }
 
@@ -217,4 +230,7 @@ function mousePressed()
   {
     state = "pregame";
   }
-} 
+  }
+
+  console.log(state)
+  
