@@ -13,6 +13,8 @@ let w=50;
 let x = 200;
 let y1 = 300;
 let y2 = 250;
+let opacity = 0;
+let fade = 1;
 
 // Three stages of event//
    //1. preevent default stage
@@ -34,6 +36,7 @@ let bollon3;
 let bluebollon;
 
 let fly = true;
+
 
 
 let state = "pregame";
@@ -75,21 +78,21 @@ function house (width, height, w, h)
  {
  noStroke()
   fill(0,0,0);
-  rect(width-300, height-340, w+180, h+100);
+  rect(width-300, height-340, 230, 150);
   fill(155,70,12);
   triangle(width-310, height-340, width-60, height-340, width-180, height-450);
   //door//
   fill(255,255,255);
-  rect(width-200, height-270, w, h+30);
+  rect(width-200, height-270, 50, 80);
   
   //windows//
-  rect(width-130, height-280, w, h);
-  rect(width-280,height-280,w,h)
+  rect(width-130, height-280, 50, 50);
+  rect(width-280,height-280,50,50)
   fill(0)
-  rect(width-258,height-280,w-45,h);
-  rect(width-108,height-280,w-45,h);
-  rect(width-280,height-258,w,h-45);
-  rect(width-130,height-258,w,h-45);
+  rect(width-258,height-280,5,50);
+  rect(width-108,height-280,5,50);
+  rect(width-280,height-258,50,5);
+  rect(width-130,height-258,50,5);
  }
 
 
@@ -111,8 +114,14 @@ bottomcolor = color (135,206,235);
  fill(0,100,0);
  rect(0,900-200,1300,200);
   house (width,height,w,h)
+  fill(opacity);
 textSize(50);
 text(" Click Here TO Start the Event",width/2,height/2);
+opacity = opacity + fade;
+if (opacity >= 255 || opacity <= 0)
+{
+  fade = fade * -1;
+}
 
  }
 
@@ -140,18 +149,16 @@ text(" Click Here TO Start the Event",width/2,height/2);
   image(bollon1, x+100, y1-300, 250+w, 250+h);
   image(bollon2, x+500, y1-300, 250+w, 250+h);
 
-  if (fly){
-    y1= y1-0.5;
-  y2= y2-0.5;}
-
-  
-    if ( y2 < 25)
-    {
-      state = "gameover";
-    
-
-  }
+if (fly == true)
+{
+  y1-=   0.5;
+  y2-=  0.5;
 }
+if (y2<25)
+{
+  state = "gameover";
+}
+  }
 
 
 function gameOver()
@@ -174,8 +181,28 @@ bottomcolor = color (135,206,235);
 
 
   house (width,height,w,h)
+  fill(random(0,255),random(0,255),random(0,255));
   textSize(50);
   text("Happy New Year!",width/2,height/2);
+fill(random(0,255),random(0,255),random(0,255));
+  circle(random(0,1000),random(0,600),random(10,25));
+  circle(random(0,1000),random(0,600),random(10,25));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+  circle(random(0,1000),random(0,600),random(5,15));
+
+
+  
 
 }
 
