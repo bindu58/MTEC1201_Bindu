@@ -53,6 +53,23 @@ bluebollon = loadImage("Image/bluebollon.png");
 function setup() {
   createCanvas(1300,900);
  textAlign(CENTER);
+ //background//sky gradient//
+  topcolor = color(0,0,255);
+bottomcolor = color (135,206,235);
+
+  {for ( let y = 0; y < 900-200; y++)
+    {
+  n = map(y,0,900-200,0,1);
+  let newcolor= lerpColor(topcolor,bottomcolor,n);
+  stroke(newcolor);
+  line(0,y,1300,y);
+  }
+  }
+   //floor//
+ fill(0,100,0);
+ rect(0,900-200,1300,200);
+  house (width,height,w,h)
+  fill(opacity);
   
  }
 
@@ -99,6 +116,21 @@ function house (width, height, w, h)
 
  function preGame()
  {
+  
+  fill(opacity);
+textSize(50);
+text(" Click Here TO Start the Event",width/2,height/2);
+opacity = opacity + fade;
+
+if (opacity >= 255 || opacity <= 0)
+{
+  fade = fade * -1;
+}
+
+ }
+
+ function game()
+ {
   //background//sky gradient//
   topcolor = color(0,0,255);
 bottomcolor = color (135,206,235);
@@ -114,21 +146,6 @@ bottomcolor = color (135,206,235);
    //floor//
  fill(0,100,0);
  rect(0,900-200,1300,200);
-  house (width,height,w,h)
-  fill(opacity);
-textSize(50);
-text(" Click Here TO Start the Event",width/2,height/2);
-opacity = opacity + fade;
-
-if (opacity >= 255 || opacity <= 0)
-{
-  fade = fade * -1;
-}
-
- }
-
- function game()
- {
   bluebollon;
  house (width,height,w,h)
 
@@ -164,7 +181,7 @@ if (y2<25)
 
 function gameOver()
 {
-//background//sky gradient//
+  //background//sky gradient//
   topcolor = color(0,0,255);
 bottomcolor = color (135,206,235);
 
@@ -179,7 +196,6 @@ bottomcolor = color (135,206,235);
    //floor//
  fill(0,100,0);
  rect(0,900-200,1300,200);
-
 
   house (width,height,w,h)
   fill(random(0,255),random(0,255),random(0,255));
