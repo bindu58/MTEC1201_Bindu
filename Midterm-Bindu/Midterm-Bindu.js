@@ -168,9 +168,10 @@ bottomcolor = color (135,206,235);
   image(bollon1, x+100, y1-300, 250+w, 250+h);
   image(bollon2, x+500, y1-300, 250+w, 250+h);
  
-  y1-=0.5;
-  y2-=0.5;
+  y1-=0.3;
+  y2-=0.3;
 
+ 
 if (y2<25)
  {
   state = "gameover"
