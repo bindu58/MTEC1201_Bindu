@@ -10,11 +10,16 @@
 //variable for the rect//
 let h=50;
 let w=50;
+
+
+
 let x = 200;
 let y1 = 300;
 let y2 = 250;
 let opacity = 0;
 let fade = 1;
+let z = 150;
+let v = 250;
 
 
 
@@ -169,24 +174,34 @@ bottomcolor = color (135,206,235);
   bluebollon;
  house (width,height,w,h)
 
+
+
+ //bollons in the back//
+  image(bollon1, z+100, v+250, 250+w, 250+h);
+  image(bollon1, z+250, v-50, 150+w, 200+h);
+  image(bollon1, z-150, v+50, 250+w, 250+h);
+  image(bollon1, z-100, v+250, 150+w, 150+h);
+  image(bollon1, z-150, v-150, 250+w, 250+h);
+  image(bollon1, z+150, v-250, 250+w, 250+h);
+  
+  v-=0.15;
+
 //bollons//
   image(bollon2, x+300, y1-20, 450+w, 450+h);
   image(bluebollon, x-300, y2-40, 650+w, 650+h);
   image(bollon3, x+100, y1-50, 350+w, 400+h);
-  image(bollon1, x+50, y1+200, 250+w, 250+h);
-  image(bollon1, x+200, y1-100, 150+w, 200+h);
-  image(bollon1, x-200, y1, 250+w, 250+h);
   image(bollon3, x-100, y1-200, 250+w, 250+h);
   image(bollon2, x+900, y1-200, 250+w, 250+h);
   image(bollon3, x+300, y1-200, 150+w, 150+h);
   image(bollon3, x-300, y1+100, 250+w, 250+h);
-  image(bollon1, x-150, y1+200, 150+w, 150+h);
-  image(bollon1, x-200, y1-200, 250+w, 250+h);
   image(bollon3, x+600, y1-50, 150+w, 150+h);
   image(bollon3, x+200, y1-300, 250+w, 250+h);
   image(bollon2, x-200, y1-300, 250+w, 250+h);
-  image(bollon1, x+100, y1-300, 250+w, 250+h);
   image(bollon2, x+500, y1-300, 250+w, 250+h);
+
+
+
+
  
   y1-=0.3;
   y2-=0.3;
