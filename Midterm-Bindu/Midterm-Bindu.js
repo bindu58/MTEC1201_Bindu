@@ -1,6 +1,6 @@
 // Bindu//
 //" Bollon"//
-// Bollons will fly in the sky and will be able to pop when the mouse is pressed. It will also change color when it pops.//
+// Bollons will fly in the sky  when the mouse is pressed. //
 // bollons is from pixaby https://pixabay.com/photos/hot-air-ballon-balloon-sky-float-5528622/,
 //https://pixabay.com/photos/sky-balloon-air-outdoors-3375042/
 //https://pixabay.com/photos/hot-air-balloon-sky-9788005/
@@ -143,7 +143,7 @@ function house (width, height, w, h)
  {
   
   fill(opacity);
-textSize(50);
+textSize(60);
 text(" Click Here TO Start the Event",width/2,height/2);
 opacity = opacity + fade;
 
@@ -184,7 +184,7 @@ bottomcolor = color (135,206,235);
   image(bollon1, z-150, v-150, 250+w, 250+h);
   image(bollon1, z+150, v-250, 250+w, 250+h);
   
-  v-=0.15;
+  v-=0.1 ;
 
 //bollons//
   image(bollon2, x+300, y1-20, 450+w, 450+h);
@@ -203,8 +203,10 @@ bottomcolor = color (135,206,235);
 
 
  
-  y1-=0.3;
-  y2-=0.3;
+  y1-=0.2;
+  y2-=0.2;
+  h-=0.1;
+  w-=0.2;
 
  
 if (y2<10)
@@ -235,8 +237,8 @@ bottomcolor = color (135,206,235);
 
   house (width,height,w,h)
   fill(random(0,255),random(0,255),random(0,255));
-  textSize(50);
-  text("Happy New Year!",width/2,height/2);
+  textSize(80);
+  text("Happy New Year 2083",width/2,height/2);
 
   fill(random(0,255),random(0,255),random(0,255));
   circle(random(0,1000),random(0,600),random(10,15));
