@@ -144,7 +144,7 @@ function house (width, height, w, h)
   
   fill(opacity);
 textSize(50);
-text(" Click Here TO Start the New Year Event",width/2,height/2);
+text(" Click Here TO Start The New Year Event",width/2,height/2);
 opacity = opacity + fade;
 
 if (opacity >= 255 || opacity <= 0)
@@ -238,7 +238,7 @@ bottomcolor = color (135,206,235);
   house (width,height,w,h)
   fill(random(0,255),random(0,255),random(0,255));
   textSize(80);
-  text("Happy New Year 2083",width/2,height/2);
+  text("Happy New Year 2083!",width/2,height/2);
 
   fill(random(0,255),random(0,255),random(0,255));
   circle(random(0,1000),random(0,600),random(10,15));
