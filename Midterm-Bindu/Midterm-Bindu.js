@@ -143,8 +143,8 @@ function house (width, height, w, h)
  {
   
   fill(opacity);
-textSize(60);
-text(" Click Here TO Start the Event",width/2,height/2);
+textSize(50);
+text(" Click Here TO Start the New Year Event",width/2,height/2);
 opacity = opacity + fade;
 
 if (opacity >= 255 || opacity <= 0)
