@@ -31,9 +31,9 @@ let v = 250;
 
 
 // variables for color//
-let r= 255
-let g = 150
-let b = 75
+let r= 255;
+let g = 150;
+let b = 75;
 let topcolor, bottomcolor;
 
 // variables for images//
