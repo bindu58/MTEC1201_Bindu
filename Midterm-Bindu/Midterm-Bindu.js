@@ -285,7 +285,8 @@ function mousePressed()
   {
     state = "pregame";
   }
-  }
-
   console.log(state)
+}
+
+  
   
