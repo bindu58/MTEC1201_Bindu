@@ -11,7 +11,7 @@ let d = 250;
 let R = 7;
 
 //
-let c = [10,20,30,40,50,60];
+let c = [25,35,45,55,65,75];
 let a = [];
 
 function setup() {
@@ -33,21 +33,27 @@ function draw() {
 
   let x1 = noise(frameCount * 0.002) * width; 
    
-  for (let i = 0; i < 30; i++)
+  for (let i = 0; i < 15; i++)
   {  
     strokeWeight(4);
-    fill(r,g,b);
+    fill(r,g,b, 30);
     square(width/2, height/2, d-(i*20) + x1,30);
   }
-if (d < 100) {
+if (d < 50) {
   d -= 0.5;
 } else {
-  d = 150;
+  d = 50;
 }
 
 
 for (let i = 0; i < 7; i++) {
-  circle(random(width), random(height), random(i));
+  fill(100,150,30,100);
+  circle(100, 100, c[i]);
+  circle (800, 100, c[i]);
+  circle (100, 800, c[i]);
+  circle (800, 800, c[i]);
+  
+
   
 }
 }
