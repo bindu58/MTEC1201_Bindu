@@ -2,26 +2,52 @@
 
 //Bindu//
 
+//Concentric squares//
 
-let y = [];
-let x = [];
+let r = 120;
+let g = 200;
+let b = 150;
+let d = 250;
+let R = 7;
 
-let move;
-
+//
+let c = [10,20,30,40,50,60];
+let a = [];
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(900, 900,);
+  rectMode(CENTER);
 }
 
-function draw() 
-{
+function draw() {
   background(0);
+  
 
-
- for (let i = 0; i < 100; i++) {
- 
-  circle(width/2, height/2-(i*6), 30,)
- move  = 3
- move = move + 0.01
+  for (let x = 0; x < width; x += 20) {
+    for (let y = 0; y < height; y += 20) {
+      fill(r, g, b);
+      circle (x, y, R);
+      
+    }
   }
+
+  let x1 = noise(frameCount * 0.002) * width; 
+   
+  for (let i = 0; i < 30; i++)
+  {  
+    strokeWeight(4);
+    fill(r,g,b);
+    square(width/2, height/2, d-(i*20) + x1,30);
+  }
+if (d < 100) {
+  d -= 0.5;
+} else {
+  d = 150;
+}
+
+
+for (let i = 0; i < 7; i++) {
+  circle(random(width), random(height), random(i));
+  
+}
 }
