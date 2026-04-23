@@ -1,1 +1,0 @@
-# MTEC1201_Bindu - spring 2026
