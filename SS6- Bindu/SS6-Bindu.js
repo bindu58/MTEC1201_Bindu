@@ -34,11 +34,11 @@ function draw() {
 
   let x1 = noise(frameCount * 0.003) * width; 
    
-  for (let i = 0; i < 40; i++)
+  for (let i = 0; i < 50; i++)
   {  
     strokeWeight(4);
     fill(r,g,b, 30);
-    square(width/2, height/2, d-(i*10) + x1,30);
+    square(width/2, height/2, d-(i*20) + x1,30);
   }
 if (d < 50) {
   d -= 0.5;
