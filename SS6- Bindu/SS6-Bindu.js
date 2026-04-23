@@ -32,9 +32,9 @@ function draw() {
     }
   }
 
-  let x1 = noise(frameCount * 0.002) * width; 
+  let x1 = noise(frameCount * 0.003) * width; 
    
-  for (let i = 0; i < 50; i++)
+  for (let i = 0; i < 40; i++)
   {  
     strokeWeight(4);
     fill(r,g,b, 30);
