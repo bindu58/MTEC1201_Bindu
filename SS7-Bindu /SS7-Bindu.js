@@ -24,7 +24,7 @@ for(let i = 0; i < houses.length; i++)
   houses[i].display();
 }
 tree.display();
-tree.grow();
+tree.grow(2);
  }
 
 
@@ -73,25 +73,31 @@ class Tree
     this.x = TempX;
     this.y = TempY;
     this.diameter = 70;
-    this.grow = [ 1,2,3,4,5,6,7,8,9,10];
-    this.grow.length = 10;
+    this.h = 100;
+   
   }
 
 display()
 {
 
   fill(155,70,12);
-  rect(this.x,this.y+600,30,100);
+  rect(this.x,this.y+600,30,this.h);
   fill(0,70,0);
   noStroke();
-  ellipse(this.x+15,this.y+590,this.diameter,100);
-  ellipse(this.x-20,this.y+550,this.diameter,100);
-  ellipse(this.x+50,this.y+550,this.diameter,100);
-  ellipse(this.x+15,this.y+500,this.diameter,100);
+  ellipse(this.x+15,this.y+590,this.diameter,this.h);
+  ellipse(this.x-20,this.y+550,this.diameter,this.h);
+  ellipse(this.x+50,this.y+550,this.diameter,this.h);
+  ellipse(this.x+15,this.y+500,this.diameter,this.h);
 
 }
 
 grow()
 {  
+  if (this.x < 200)
+  {
+    this.h = this.h + 0.5;
+    this.diameter = this.diameter + 0.5;
+
+  }
 }
 }
