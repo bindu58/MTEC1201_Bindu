@@ -1,4 +1,5 @@
 //Bindu//
+// objects are from Mid term//
 
 let houses = [];
 houses.length = 100;
