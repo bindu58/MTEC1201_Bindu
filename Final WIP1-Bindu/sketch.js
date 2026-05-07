@@ -61,7 +61,7 @@ fill(r,0,128);
   text('PLAY',-100,120);
   image(play,20,50,90,90);
 
-if ( mouseX === 100 || mouseY === 50   )
+if ( mouseX || mouseY   )
 {
 r = 255;
 }
