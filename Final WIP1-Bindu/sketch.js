@@ -6,12 +6,12 @@ let t = [];
 let str;
 let font;
 let play;
-let person;
-let circle = [10,20,30,40,50];
+let orbit;
 let state = "startscreen";
 let r = 128;
 let wall;
 let sunrise;
+let myCamera;
 
 
 function preload()
@@ -27,11 +27,6 @@ function setup()
 {
   createCanvas(1300, 900,WEBGL);
   rectMode(CENTER);
-  for(let i =0; i < 10; i++)
-  {
-    circle[i] = new Circle();
-
-  }
   wall = new Wall();
 }
 
@@ -90,8 +85,7 @@ fill(r,0,128);
 
 function Room()
 {
-  background(128,0,128);
-
+  background(0);
    wall.display();
    //Doors//
   fill(0);
@@ -106,8 +100,7 @@ function Room()
 
 function Room2()
 {
-  background(128,0,128);
-
+  background(0);
   wall.display();
 //doors//
   
@@ -116,26 +109,21 @@ fill(0);
   quad(-350,285,-350,50,-270,50,-270,240);
   rect(0,135,70,130);
   quad(600,420,600,0,450,0,450,340);
-  quad(350,285,350,50,270,50,270,240); 
-
+  quad(350,285,350,50,270,50,270,240);
 
 }
 
+
 function Room3 ()
 {
-  background(128,0,128);
-
+  background(0);
   wall.display();
 
   fill(0);
   quad(-600,420,-600,0,-450,0,-450,340);
   quad(-350,285,-350,50,-270,50,-270,240);
-  fill(255,50,25);
-  rect(0,120,70,150,20,20,0,0);
-  fill(0);
-  rect(0,135,70,130,20,20,0,0);
-  
-  
+  rect(-70,135,70,130,20,20,0,0);
+  rect(70,135,70,130,20,20,0,0);
   quad(600,420,600,0,450,0,450,340);
   quad(350,285,350,50,270,50,270,240); 
 
@@ -147,28 +135,10 @@ function Room3 ()
 
 function lastScreen()
 {
+  orbitControl();
   background(0);
   image(sunrise,-650,-450,1300,900);
 }
-
-class Circle
-{
-  constructor( TempX, TempY,TempZ,TempDiameter)
-  {
-  this.x = TempX;
-  this.y = TempY;
-  this.z = TempZ;
-  this.diameter = TempDiameter;
-  }
-
-display()
-    {
-      fill(255)
-      circle(this.x,this.y, this.diameter);
-
-    }
-}
-
 
 
 function mousePressed()
@@ -217,14 +187,31 @@ class Wall
 
   display()
   {
+    orbitControl();
   noStroke();
   strokeWeight();
   fill(150,0,150);
   quad(this.x-650,this.y-450,this.x+650,this.y-450,this.x+200,this.y-200,this.x-200,this.y-200);
   quad(this.x-650,this.y+450,this.x+650,this.y+450,this.x+200, this.y+200, this.x-200,this.y+200);
-  fill(128,0,128,);
+ 
+  fill(128,0,128);
   rect(this.x,this.y,this.h,this.h);
+  quad(this.x-650,this.y-450,this.x-650,this.y+450,this.x-200,this.y+200,this.x-200,this.y-200);
+  quad(this.x+650,this.y-450,this.x+650,this.y+450,this.x+200,this.y+200, this.x+200,this.y-200);
 
+  }
+
+}
+
+class Orbit
+{
+  constructor()
+  {
+  }
+ 
+  display()
+  {
+    orbitControl();
   }
 
 }
