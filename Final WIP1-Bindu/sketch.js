@@ -5,20 +5,25 @@ let x,y,h;
 let t = [];
 let str;
 let font;
-let play;
+let character;
+let character2;
+let person;
 let orbit;
 let state = "startscreen";
 let r = 128;
 let wall;
 let sunrise;
 let myCamera;
+let player;
 
 
 function preload()
 {
    font = loadFont('/Images/Easter Joys.otf');
    play = loadImage("Images/play.svg");
-   sunrise = loadImage("Images/Sunrise.png")
+   sunrise = loadImage("Images/Sunrise.png");
+   player = loadImage("/Images/player.png")
+  // person = loadModel('Assets/person.obj',true);
 }
   
 
@@ -28,6 +33,9 @@ function setup()
   createCanvas(1300, 900,WEBGL);
   rectMode(CENTER);
   wall = new Wall();
+  character = new Character();
+  character2 = new Character(400,300,300,400);
+
 }
 
 function draw() 
@@ -39,6 +47,7 @@ function draw()
    else if ( state === "room")
     {
       Room();
+
     }
     else if (state === "room2")
     {
@@ -92,7 +101,8 @@ function Room()
   quad(-600,420,-600,0,-450,0,-450,340);
   rect(0,135,70,130);
   quad(600,420,600,0,450,0,450,340);
-  
+  character.display();
+  character.update();
 
 }
 
@@ -110,6 +120,8 @@ fill(0);
   rect(0,135,70,130);
   quad(600,420,600,0,450,0,450,340);
   quad(350,285,350,50,270,50,270,240);
+  character.display();
+  character.update();
 
 }
 
@@ -126,6 +138,8 @@ function Room3 ()
   rect(70,135,70,130,20,20,0,0);
   quad(600,420,600,0,450,0,450,340);
   quad(350,285,350,50,270,50,270,240); 
+  character.display();
+  character.update();
 
 
 
@@ -138,6 +152,7 @@ function lastScreen()
   orbitControl();
   background(0);
   image(sunrise,-650,-450,1300,900);
+  character2.display();
 }
 
 
@@ -203,15 +218,46 @@ class Wall
 
 }
 
-class Orbit
+class Character
 {
   constructor()
   {
+    this.x=0;
+    this.y=300;
+    this.h = 100;
+    this.w = 50
+    this.move = 5;
+    this.vel = createVector(0,0,0);
   }
- 
+
+  update()
+  {
+    if (keyIsDown(UP_ARROW))
+    {
+      this.y -- == this.move;
+    }
+    if (keyIsDown(DOWN_ARROW))
+    {
+      this.y++ == this.move;
+    }
+    if (keyIsDown(LEFT_ARROW))
+    {
+      this.x -- == this.move;
+    }
+    if (keyIsDown(RIGHT_ARROW))
+      this.x ++ === this.move;
+
+  }
   display()
   {
-    orbitControl();
+    image(player,this.x,this.y,this.w,this.h);
+
+    if ( this.y == 100)
+    {
+      state = "room2"
+      this.y = 350;
+    }
+
   }
 
 }
