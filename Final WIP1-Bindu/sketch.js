@@ -1,9 +1,12 @@
 //Bindu//
 //Escape The Illusion//
+// Use arrow key to move the character//
 
 let x,y,h;
+
 let t = [];
 let str;
+
 let font;
 let character;
 let character2;
@@ -11,10 +14,12 @@ let person;
 let orbit;
 let state = "startscreen";
 let r = 128;
+
 let wall;
 let sunrise;
 let myCamera;
 let player;
+let circle;
 
 
 function preload()
@@ -35,6 +40,7 @@ function setup()
   wall = new Wall();
   character = new Character();
   character2 = new Character(400,300,300,400);
+  circle = new Circle ();
 
 }
 
@@ -82,7 +88,7 @@ fill(r,0,128);
   image(play,20,50,90,90);
 
 
-  if (  -20<mouseX<=20|| 90 <mouseY <=110 )
+  if ( 0 < mouseX < 50 && 0 < mouseY < 50)
   {
     r = 255;
   }
@@ -222,8 +228,8 @@ class Character
 {
   constructor()
   {
-    this.x=0;
-    this.y=300;
+    this.x=-25;
+    this.y=350;
     this.h = 100;
     this.w = 50
     this.move = 5;
@@ -260,4 +266,22 @@ class Character
 
   }
 
+}
+
+class Circle
+{
+  constructor()
+  {
+    this.x = -400;
+    this.y = 100;
+    this.d = 50;
+
+  }
+
+
+  display ()
+    {
+      fill (200,180,0);
+        circle( this.x, this.y, this.d)
+    }
 }
