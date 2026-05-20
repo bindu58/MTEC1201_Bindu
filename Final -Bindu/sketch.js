@@ -181,10 +181,10 @@ function Room3 ()
   let x1 = noise(frameCount * 0.002) * width; 
   for (let i = 0; i < 30; i++)
   {  
-    fill(128,0,18,50);
+    fill(0,0,0,10);
     square(-9, 0, d-(i*20) + x1,30);
   }
-  if (d < 200) {
+  if (d < 50) {
   d -= 0.5;
 } else {
   d = 150;
