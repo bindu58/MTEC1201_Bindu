@@ -4,27 +4,30 @@
 
 let x,y,h;
 
-let t = [];
+//var for sound//
+let first;
 let str;
+
 
 let font;
 let character;
 let person;
 let state = "startscreen";
 let r = 128;
+let d = 350;
 
 let wall;
 let sunrise;
 let myCamera;
 let player;
-let circle;
+let ellipse;
 
 //variable for timer//
 currentTime = 0;
+timer = 2000;
 timer1= 4000;
 timer2= 6000; 
 timer3= 8000;
-timer4= 10000;
 
 
 
@@ -34,7 +37,9 @@ function preload()
    play = loadImage("Images/play.svg");
    sunrise = loadImage("Images/Sunrise.png");
    player = loadImage("/Images/player.png")
-  // person = loadModel('Assets/person.obj',true);
+   first = loadSound("/Audio/first.mp3");
+
+
 }
   
 
@@ -45,6 +50,7 @@ function setup()
   rectMode(CENTER);
   wall = new Wall();
   character = new Character();
+  ellipse = new Ellipse();
  
 }
 
@@ -81,10 +87,13 @@ function draw()
 
 function startScreen()
 {
-
 str = 'ESCAPE THE ILLUSION'
 background(0);
+ellipse.display1();
+first.play();
 fill(r,0,128);
+first.loop();
+first.setVolume(5);
   rect(0,100,300,150,50);
   noStroke();
   fill(128,0,128);
@@ -107,7 +116,7 @@ fill(r,0,128);
     {
     r = 128;
     }
-}
+  }
 
 
 
@@ -116,7 +125,6 @@ function Room()
 {
   background(0);
    wall.display();
-   
    //Doors//
   fill(0);
   quad(-600,420,-600,0,-450,30,-450,340);
@@ -143,8 +151,14 @@ function Room2()
 {
   background(0);
   wall.display();
-//doors//
+ for (let i = 0; i < 30; i++)
+  {  
+    fill(200,150,150,50);
+    square(-9, 0, d-(i*20) ,30);
+  }
+
   
+  //doors//
   fill(0);
   quad(-600,420,-600,0,-450,30,-450,340);
   quad(-350,285,-350,50,-270,80,-270,240);
@@ -153,7 +167,8 @@ function Room2()
   quad(350,285,350,50,270,80,270,240);
   character.display1();
   character.update();
-    
+  
+ 
 
 }
 
@@ -162,6 +177,19 @@ function Room3 ()
 {
   background(0);
   wall.display();
+
+  let x1 = noise(frameCount * 0.002) * width; 
+  for (let i = 0; i < 30; i++)
+  {  
+    fill(128,0,18,50);
+    square(-9, 0, d-(i*20) + x1,30);
+  }
+  if (d < 200) {
+  d -= 0.5;
+} else {
+  d = 150;
+}
+  
 
   fill(0);
   quad(-600,420,-600,0,-450,30,-450,340);
@@ -175,14 +203,11 @@ function Room3 ()
 
 
 
-
 }
-
 
 
 function lastScreen()
 {
-  orbitControl();
   background(0);
   image(sunrise,-650,-450,1300,900);
   character.display3();
@@ -228,6 +253,7 @@ class Wall
     this.x = 0;
     this.y = 0;
     this.h = 400;
+     r = 128;
   }
 
   display()
@@ -296,12 +322,14 @@ class Character
     {
       state = "gameover";
       this.y = 350;
+      this.x = 0;
     }
 
     if (this.x == 500 && this.y<320)
     {
       state = "gameover";
       this.t= 350;
+      this.x = 0;
     }
 
    
@@ -331,6 +359,20 @@ class Character
        this.x = 0;
     }
 
+     if (this.x == 280 && this.y<190)
+    {
+      state = "gameover";
+      this.y = 350;
+      this.x = 0;
+    }
+    if (this.x == -320 && this.y<190)
+    {
+      state = "gameover";
+      this.y = 350;
+      this.x = 0;
+    }
+
+
   }
 display2()
 {
@@ -340,6 +382,38 @@ display2()
     {
       state = "lastscreen";
       this.y = 350;
+    }
+    if ( this.y == 100 && this.x == -110)
+    {
+      state = "gameover";
+      this.y = 300;
+      this.x = 0;
+    }
+     if ( this.y == 100 && this.x == 50)
+    {
+      state = "gameover";
+      this.y = 300;
+      this.x = 0;
+    }
+
+    if (this.x == 500 && this.y<320)
+    {
+      state = "gameover";
+      this.t= 300;
+       this.x = 0;
+    }
+
+     if (this.x == 280 && this.y<190)
+    {
+      state = "gameover";
+      this.y = 350;
+      this.x = 0;
+    }
+     if (this.x == -320 && this.y<190)
+    {
+      state = "gameover";
+      this.y = 350;
+      this.x = 0;
     }
 }
 
@@ -352,9 +426,49 @@ display3()
 
 function gameOver()
 {
-  wall.display();
+  background(0);
+  ellipse.display();
+  rotateX(frameCount * 0.00001);
   fill(255,0,0);
   textSize(70);
   text("Game Over",-200,-100);
-  text("Click Mouse Restart",-320,-0);
+  text("Click Mouse To Restart",-320,-0);
+ }
+
+ class Ellipse
+ {
+    constructor()
+    {
+    this.x = -650;
+    this.y = -450;
+    this.r = 5;
+    this.t = [10,15,20,25,30];
+    }
+
+
+    display()
+    {
+      for (let x = this.x; x < width; x += 100)
+     {
+    for (let y = this.y; y < height; y += 100) 
+       {
+       fill(120, 200, 150);
+       circle (x, y,this.t[0,1,2,3,4]);
+       rotateZ(frameCount * 0.0001);
+       }
+     }
+    }
+    display1()
+    {
+     for (let x = this.x; x < width; x += 50)
+     {
+      for (let y = this.y; y < height; y += 30) 
+       {
+       fill(150, 15, 100, 80);
+       circle (x, y, this.t[2]);
+       }
+     }
+    }
+  
 }
+
