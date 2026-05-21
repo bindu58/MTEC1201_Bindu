@@ -43,7 +43,6 @@ function preload()
 }
   
 
-
 function setup() 
 {
   createCanvas(1300, 900,WEBGL);
@@ -184,11 +183,14 @@ function Room3 ()
     fill(0,0,0,20);
     square(-9, 0, d-(i*50) + x1,30);
   }
-  if (d < 50) {
-  d -= 0.5;
-} else {
-  d = 100;
-}
+  if (d < 50) 
+    {
+       d -= 0.5;
+    } 
+    else 
+      {
+         d = 100;
+      }
   
 
   fill(0);
@@ -284,7 +286,6 @@ class Character
     this.h = 100;
     this.w = 50;
     this.move= 10;
-    this.vel = createVector(0,0,0);
   }
 
   update()
@@ -428,7 +429,6 @@ function gameOver()
 {
   background(0);
   ellipse.display();
-  rotateX(frameCount * 0.00001);
   fill(255,0,0);
   textSize(70);
   text("Game Over",-200,-100);
