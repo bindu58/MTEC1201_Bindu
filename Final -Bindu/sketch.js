@@ -92,8 +92,7 @@ background(0);
 ellipse.display1();
 first.play();
 fill(r,0,128);
-first.loop();
-first.setVolume(5);
+first.setVolume(0.1);
   rect(0,100,300,150,50);
   noStroke();
   fill(128,0,128);
@@ -151,10 +150,10 @@ function Room2()
 {
   background(0);
   wall.display();
- for (let i = 0; i < 30; i++)
+ for (let i = 0; i < 10; i++)
   {  
     fill(200,150,150,50);
-    square(-9, 0, d-(i*20) ,30);
+    square(-9, 0, d-(i*50) ,30);
   }
 
   
@@ -179,15 +178,15 @@ function Room3 ()
   wall.display();
 
   let x1 = noise(frameCount * 0.002) * width; 
-  for (let i = 0; i < 30; i++)
+  for (let i = 0; i < 10; i++)
   {  
-    fill(0,0,0,10);
-    square(-9, 0, d-(i*20) + x1,30);
+    fill(0,0,0,20);
+    square(-9, 0, d-(i*50) + x1,30);
   }
   if (d < 50) {
   d -= 0.5;
 } else {
-  d = 150;
+  d = 100;
 }
   
 
@@ -452,7 +451,7 @@ function gameOver()
      {
     for (let y = this.y; y < height; y += 100) 
        {
-       fill(120, 200, 150);
+       fill(120, 0, 150);
        circle (x, y,this.t[0,1,2,3,4]);
        rotateZ(frameCount * 0.0001);
        }
