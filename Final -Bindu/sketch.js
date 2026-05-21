@@ -1,6 +1,8 @@
 //Bindu//
 //Escape The Illusion//
 // Use arrow key to move the character//
+// the picture used is from my brother//
+//Audios recorded by me//
 
 let x,y,h;
 
@@ -89,8 +91,9 @@ str = 'ESCAPE THE ILLUSION'
 background(0);
 ellipse.display1();
 first.play();
-fill(r,0,128);
 first.setVolume(0.1);
+
+fill(r,0,128);
   rect(0,100,300,150,50);
   noStroke();
   fill(128,0,128);
