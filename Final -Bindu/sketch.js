@@ -11,14 +11,12 @@ let str;
 
 let font;
 let character;
-let person;
 let state = "startscreen";
 let r = 128;
 let d = 350;
 
 let wall;
 let sunrise;
-let myCamera;
 let player;
 let ellipse;
 
@@ -133,7 +131,7 @@ function Room()
   character.update();
  
   currentTime = millis();
-  if ( currentTime == currentTime && currentTime<timer2)
+  if ( currentTime == currentTime && currentTime<timer3)
   {
      fill(255);
   textSize(40);
